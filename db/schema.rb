@@ -22,10 +22,11 @@ ActiveRecord::Schema.define(version: 2021_02_17_184920) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.text "content"
+    t.string "content", null: false
     t.integer "restaurant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "rating", null: false
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 
